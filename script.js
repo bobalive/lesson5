@@ -92,16 +92,18 @@ function plusOrMinus(element) {
 var timer = document.querySelector('.header__timer-extra');
 function uping(){
     timer.innerHTML++
-    if(timer.textContent < 50){
+    if(timer.textContent == 100){
+        timer.textContent = timer.textContent
+    }else if(timer.textContent < 50){
         setTimeout(() => {
             uping()
-    },500);
+    },100);
     }else if(timer.textContent >= 50){
         setTimeout(() => {
             uping()
-        },2000);
+        },500);
     } 
 }
 setTimeout(() => {
     uping()
-}, 500);
+}, 100);
